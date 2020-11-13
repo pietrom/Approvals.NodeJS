@@ -18,6 +18,12 @@ describe('approvals', function () {
       approvals.verify(__dirname, testName, dataToVerify, approvalOverrides);
     });
 
+    it('should use custom files extension when provided', function () {
+      var testName = "customExtension";
+      var dataToVerify = "some stuff <em>here</em>!";
+      approvals.verify(__dirname, testName, dataToVerify, approvalOverrides, 'html');
+    });
+
     it("should verify an image", function () {
 
       // copy of the Approvals logo but base64 encoded
